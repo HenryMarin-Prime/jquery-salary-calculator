@@ -60,31 +60,31 @@ function appendToDOM(arrayParam){
     </tr>`
     $('#employeeTableOut').append(row);
     }
-    monthlySalary();
-    deleteRow();
+    monthlySalary(employees);
+    deleteRow(employees);
 }
 
 //Now the the table can be seen in the DOM we can now move to a delete function
 //a delete button was added to the row in order to be able to remove the item as needed
 //create a function that when pushed, the delete function will remove an added row
 
-function deleteRow(){
+function deleteRow(arrayParam){
     console.log('in deleteRow');
     $(this).closest('tr').remove();
 
     let idNumber = $(this).attr('id');
-    for (let i = 0 ; i < employees.length; i++){
-    if(employees[i].idNumber === idNumber){
-      employees.splice(i,1);
+    for (let i = 0 ; i < arrayParam.length; i++){
+    if(arrayParam[i].idNumber === idNumber){
+      arrayParam.splice(i,1);
     }
 }
 }
 
-function monthlySalary(){
+function monthlySalary(arrayParam){
     console.log('In monthlySalary');
     let total = 0;
-    for (let i = 0; i < employees.length; i++){
-      total += employees[i].annualSalary/12;
+    for (let i = 0; i < arrayParam.length; i++){
+      total += arrayParam[i].annualSalary/12;
     }
     total = total
     console.log(total);
