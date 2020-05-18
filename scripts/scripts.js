@@ -75,7 +75,7 @@ function deleteRow(arrayParam){
     let idNumber = $(this).attr('id');
     for (let i = 0 ; i < arrayParam.length; i++){
     if(arrayParam[i].idNumber === idNumber){
-      arrayParam.splice(i,1);
+      arrayParam.splice(i, 1);
     }
 }
 }
@@ -86,7 +86,7 @@ function monthlySalary(arrayParam){
     for (let i = 0; i < arrayParam.length; i++){
       total += arrayParam[i].annualSalary/12;
     }
-    total = total
+    total = total++
     console.log(total);
     $('#monthlyTotal').empty();
     $('#monthlyTotal').append(total);
