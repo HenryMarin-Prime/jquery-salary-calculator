@@ -81,6 +81,7 @@ function deleteRow(arrayParam){
 }
 
 function monthlySalary(arrayParam){
+    $('#monthlyTotal').empty();
     console.log('In monthlySalary');
     let total = 0;
     for (let i = 0; i < arrayParam.length; i++){
@@ -88,7 +89,7 @@ function monthlySalary(arrayParam){
     }
     total = total++
     console.log(total);
-    $('#monthlyTotal').empty();
+    
     $('#monthlyTotal').append(total);
   
   }
